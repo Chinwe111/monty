@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <ctype.h>
+
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -35,7 +39,7 @@ typedef struct bus_s
 	char *arg;
 	FILE *file;
 	char *content;
-	int lifi;
+	int ln;
 }  bus_t;
 extern bus_t bus;
 
@@ -56,5 +60,15 @@ typedef struct instruction_s
 void func_push(stack_t **head, unsigned int line_number);
 void func_pall(stack_t **head, unsigned int line_number);
 void func_pint(stack_t **head, unsigned int line_number);
+void func_pop(stack_t **head, unsigned int line_number);
+void func_swap(stack_t **head, unsigned int line_number);
+void func_add(stack_t **head, unsigned int line_number);
+void func_nop(stack_t **head, unsigned int line_number);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void func_queue(stack_t **head, unsigned int line_number);
+void func_stack(stack_t **head, unsigned int nuumber);
+void free_stack(stack_t *head);
+
 
 #endif

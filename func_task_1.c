@@ -32,10 +32,10 @@ void func_push(stack_t **head, unsigned int line_number)
 		free_stack(*head);
 		exit(EXIT_FAILURE); }
 	i = atoi(bus.arg);
-	if (bus.lifi == 0)
-		addnode(stack, i);
+	if (bus.ln == 0)
+		addnode(head, i);
 	else
-		addqueue(stack, i);
+		addqueue(head, i);
 }
 
 /**
