@@ -9,7 +9,7 @@
 
 void func_push(stack_t **head, unsigned int line_number)
 {
-	int i, j = 0, flag = 0;
+	int n, j = 0, flag = 0;
 
 	if (bus.arg)
 	{
@@ -31,30 +31,9 @@ void func_push(stack_t **head, unsigned int line_number)
 		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE); }
-	i = atoi(bus.arg);
+	n = atoi(bus.arg);
 	if (bus.ln == 0)
-		addnode(head, i);
+		addnode(head, n);
 	else
-		addqueue(head, i);
-}
-
-/**
- * func_pall - prints the stack
- * @head: a pointer to the stack
- * @line_number: the line of the opcode being executed
- * Return: no return
-*/
-void func_pall(stack_t **head, unsigned int line_number)
-{
-	stack_t *h;
-	(void)line_number;
-
-	h = *head;
-	if (h == NULL)
-		return;
-	while (h)
-	{
-		printf("%d\n", h->n);
-		h = h->next;
-	}
+		addqueue(head, n);
 }
