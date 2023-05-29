@@ -15,7 +15,7 @@ void func_sub(stack_t **head, unsigned int line_num)
 		aux = aux->next;
 	if (nodes < 2)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_numb);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
