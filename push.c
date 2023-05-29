@@ -2,12 +2,12 @@
 /**
  * func_push - adds an element to the stack
  * @head: a pointer to the stack
- * @line_number: the line of the opcode being executed
+ * @line_num: the line of the opcode being executed
  *
  * Return: no return
  */
 
-void func_push(stack_t **head, unsigned int line_number)
+void func_push(stack_t **head, unsigned int line_num)
 {
 	int n, j = 0, flag = 0;
 
@@ -20,13 +20,13 @@ void func_push(stack_t **head, unsigned int line_number)
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
 				flag = 1; }
 		if (flag == 1)
-		{ fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		{ fprintf(stderr, "L%d: usage: push integer\n", line_num);
 			fclose(bus.file);
 			free(bus.content);
 			free_stack(*head);
 			exit(EXIT_FAILURE); }}
 	else
-	{ fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	{ fprintf(stderr, "L%d: usage: push integer\n", line_num);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);

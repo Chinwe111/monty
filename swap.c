@@ -2,11 +2,11 @@
 /**
  * func_swap - adds the top two elements of the stack.
  * @head: stack head
- * @line_number: the line of the opcode being executed
+ * @line_num: the line of the opcode being executed
  * Return: no return
 */
 
-void func_swap(stack_t **head, unsigned int line_number)
+void func_swap(stack_t **head, unsigned int line_num)
 {
 	stack_t *h;
 	int len = 0, aux;
@@ -19,7 +19,7 @@ void func_swap(stack_t **head, unsigned int line_number)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_num);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);

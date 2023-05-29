@@ -2,13 +2,13 @@
 /**
  * func_queue - prints the top
  * @head: stack head
- * @line_number: the line of the opcode being executed
+ * @line_num: the line of the opcode being executed
  * Return: no return
 */
-void func_queue(stack_t **head, unsigned int line_number)
+void func_queue(stack_t **head, unsigned int line_num)
 {
 	(void)head;
-	(void)line_number;
+	(void)line_num;
 	bus.ln = 1;
 }
 

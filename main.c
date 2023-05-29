@@ -1,4 +1,6 @@
 #include "monty.h"
+#include <stdio.h>
+bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
 * main - monty code interpreter
@@ -13,7 +15,7 @@ int main(int argc, char *argv[])
 	size_t size = 0;
 	ssize_t read_line = 1;
 	stack_t *stack = NULL;
-	unsigned int line_number = 0;
+	unsigned int line_num = 0;
 
 	if (argc != 2)
 	{
@@ -32,14 +34,14 @@ int main(int argc, char *argv[])
 		content = NULL;
 		read_line = getline(&content, &size, file);
 		bus.content = content;
-		line_number++;
+		line_num++;
 		if (read_line > 0)
 		{
-			execute(content, &stack, line_number, file);
+			execute(content, &stack, line_num, file);
 		}
 		free(content);
 	}
-	free_stack(head);
+	free_stack(stack);
 	fclose(file);
 return (0);
 }

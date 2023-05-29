@@ -2,15 +2,14 @@
 /**
  * func_pall - prints the stack
  * @head: a pointer to the stack
- * @line_number: the line of the opcode being executed
+ * @line_num: the line of the opcode being executed
  * Return: no return
 */
 
-void func_pall(stack_t **head,
-		unsigned int line_number)
+void func_pall(stack_t **head, unsigned int line_num)
 {
 	stack_t *h;
-	(void)line_number;
+	(void)line_num;
 
 	h = *head;
 	if (h == NULL)
